@@ -1,3 +1,4 @@
+import React from "react";
 import { Button } from "antd";
 
 type Props = {
@@ -18,4 +19,4 @@ const ButtonAction = ({ label, icon, onClick }: Props) => {
   );
 };
 
-export default ButtonAction;
+export default React.memo(ButtonAction);

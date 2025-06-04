@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import { Typography, Space, Row, Col, Flex } from "antd";
 import SearchInput from "../atoms/SearchInput";
 import CompanyTable from "../organisms/CompanyTable";
@@ -26,11 +26,12 @@ const CompanyListTemplate = () => {
     setSearchTerm(value);
   };
 
-  const fetchCompanies = async (url: string) => {
+  const fetchCompanies = useCallback(async (url: string) => {
     const res = await fetch(url);
     const data = await res.json();
     setCompanies(data);
-  };
+   }, []);
+
   useEffect(() => {
     const delayDebounce = setTimeout(() => {
       if (searchTerm.trim() !== '') {
@@ -41,7 +42,12 @@ const CompanyListTemplate = () => {
     }, 500);
 
     return () => clearTimeout(delayDebounce);
-  }, [searchTerm, fetchCompanies]);
+  }, [searchTerm]);
+
+
+  useEffect(() => {
+    fetchCompanies(`/api/companies`);
+  }, [fetchCompanies]);
 
 
   return (
@@ -88,5 +94,5 @@ const CompanyListTemplate = () => {
   );
 };
 
-export default CompanyListTemplate;
+export default React.memo(CompanyListTemplate);
 

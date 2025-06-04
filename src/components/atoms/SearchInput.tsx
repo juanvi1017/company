@@ -1,3 +1,4 @@
+import React from "react";
 import { Input } from "antd";
 import { SearchOutlined } from "@ant-design/icons";
 
@@ -17,4 +18,4 @@ const SearchInput = ({ onSearch }: Props) => {
   );
 };
 
-export default SearchInput;
+export default React.memo(SearchInput);

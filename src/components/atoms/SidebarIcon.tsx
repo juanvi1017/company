@@ -1,3 +1,4 @@
+import React from "react";
 import { Tooltip } from "antd";
 
 type SidebarIconProps = {
@@ -32,5 +33,5 @@ const SidebarIcon = ({
   );
 };
 
-export default SidebarIcon;
+export default React.memo(SidebarIcon);
 

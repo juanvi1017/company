@@ -1,4 +1,4 @@
-
+import React from "react";
 type Props = { status: "Activo" | "Inactivo" };
 
 const StatusTag = ({ status }: Props) => {
@@ -18,4 +18,4 @@ const StatusTag = ({ status }: Props) => {
   );
 };
 
-export default StatusTag;
+export default React.memo(StatusTag);

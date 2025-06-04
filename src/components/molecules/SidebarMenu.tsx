@@ -1,5 +1,6 @@
 "use client";
 
+import React from "react";
 import {
   SettingOutlined,
   EyeOutlined
@@ -55,4 +56,4 @@ const SidebarMenu = ({ width, isDrawer }: Props) => {
   );
 };
 
-export default SidebarMenu;
+export default React.memo(SidebarMenu);

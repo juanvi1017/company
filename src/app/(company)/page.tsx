@@ -1,10 +1,14 @@
+import React, { Suspense } from "react";
 import MainLayout from "@/components/templates/MainLayout";
-import CompanyListTemplate from "@/components/templates/CompanyListTemplate";
+
+const CompanyListTemplate = React.lazy(() => import("@/components/templates/CompanyListTemplate"));
 
 export default function CompanyPage() {
   return (
     <MainLayout>
-      <CompanyListTemplate />
+      <Suspense fallback={<div>Cargando...</div>}>
+        <CompanyListTemplate />
+      </Suspense>
     </MainLayout>
   );
 }

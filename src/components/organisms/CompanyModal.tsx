@@ -111,4 +111,4 @@ const CompanyModal = ({ isModalOpen, setIsModalOpen }: ModalProps) => {
   );
 };
 
-export default CompanyModal;
+export default React.memo(CompanyModal);

@@ -1,4 +1,5 @@
 "use client";
+import React from "react";
 import { Dropdown, Button, MenuProps } from "antd";
 import {
   EllipsisOutlined,
@@ -50,5 +51,5 @@ const CompanyActions = () => (
   </div>
 );
 
-export default CompanyActions;
+export default React.memo(CompanyActions);
 

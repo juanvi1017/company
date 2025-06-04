@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import React, { useState } from "react";
 import { Layout, Drawer, Button, Grid } from "antd";
 import { MenuOutlined } from "@ant-design/icons";
 import SidebarMenu from "../molecules/SidebarMenu";
@@ -64,4 +64,4 @@ const MainLayout = ({ children }: { children: React.ReactNode }) => {
   );
 };
 
-export default MainLayout;
+export default React.memo(MainLayout);
