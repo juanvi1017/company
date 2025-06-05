@@ -46,7 +46,7 @@ const MainLayout = ({ children }: { children: React.ReactNode }) => {
       {/* Contenido principal */}
       <Layout
         style={{
-          height:"100vh",
+          height: isMobile ? "auto" : "100vh",
           marginLeft: isMobile ? 0 : 70,
           background: "#f5f5f5",
         }}
